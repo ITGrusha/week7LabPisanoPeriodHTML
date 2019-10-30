@@ -17,7 +17,9 @@ class Sequence {
 public:
     Sequence(int);
 
-    int getPeriod();
+    int getPeriodLength();
+
+    std::vector<int> getPeriod();
 
     SequenceMember getFirstElement();
 

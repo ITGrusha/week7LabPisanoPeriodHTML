@@ -2,11 +2,12 @@
 // Created by MrGra on 10/26/2019.
 //
 #include <cstdio>
+#include <iostream>
 #include "FibMod.hpp"
 #include "Pisano.hpp"
 
 
-int Sequence::getPeriod() {
+int Sequence::getPeriodLength() {
     SequenceMember firstElement = this->getFirstElement();
     SequenceMember tortoise = firstElement.getNext();
     int lam = 1;
@@ -17,6 +18,19 @@ int Sequence::getPeriod() {
         lam++;
     }
     return lam;
+}
+
+std::vector<int> Sequence::getPeriod() {
+    int len = this->getPeriodLength();
+
+    SequenceMember firstElement = this->getFirstElement();
+    SequenceMember tortoise = firstElement;
+    std::vector<int> result;
+    for (int i = 0; i < len; ++i) {
+        result.emplace_back(tortoise.GetValue());
+        ++tortoise;
+    }
+    return result;
 }
 
 SequenceMember SequenceMember::getNext() {
