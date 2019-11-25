@@ -8,45 +8,45 @@
 #endif //WEEK7LABPISANOPERIODHTML_PISANO_HPP
 
 #include <vector>
+#include "Rand.hpp"
 
-class Sequence;
-
-class SequenceMember;
 
 class Sequence {
 public:
-    Sequence(int);
+    Sequence(long long, long long);
 
-    int getPeriod();
+    int FindPeriodByKey();
 
-    SequenceMember getFirstElement();
+//    SequenceMember GetFirstElement();
 
-    SequenceMember getElement(int);
+//    SequenceMember GetElement(int);
 
     bool operator==(Sequence &);
 
 private:
-    int mod;
-    std::vector<int> sequence;
+    long long module;
+    long long keyLength;
+    Rand random = Rand(1, 1);
+    std::vector< long long > sequence;
 };
 
 
-class SequenceMember {
-public:
-    SequenceMember(int number, int value, Sequence &sequence);
-
-    SequenceMember getNext();
-
-    int GetValue();
-
-    SequenceMember operator++(int);
-
-    SequenceMember &operator++();
-
-    bool operator!=(const SequenceMember &);
-
-private:
-    Sequence *sequence;
-    int number = 0;
-    int value = 0;
-};
+//class SequenceMember {
+//public:
+//    SequenceMember(int number, int value, Sequence &sequence);
+//
+//    SequenceMember getNext();
+//
+//    int GetValue();
+//
+//    SequenceMember operator++(int);
+//
+//    SequenceMember &operator++();
+//
+//    bool operator!=(const SequenceMember &);
+//
+//private:
+//    Sequence *sequence;
+//    int number = 0;
+//    int value = 0;
+//};

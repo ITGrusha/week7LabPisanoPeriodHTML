@@ -3,4 +3,4 @@ project(week7LabPisanoPeriodHTML)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(week7LabPisanoPeriodHTML main.cpp FibMod.cpp FibMod.hpp Pisano.cpp Pisano.hpp)
+add_executable(week7LabPisanoPeriodHTML main.cpp Pisano.cpp Pisano.hpp FibX.cpp FibX.hpp Rand.cpp Rand.hpp)
